@@ -3,11 +3,11 @@
   "version": "4.0.0-finch.1",
   "license": "MIT",
   "scripts": {
-    "start": "razzle start",
+    "app": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js",
-    "heroku-postbuild": "npm run build && npm run start:prod"
+    "start": "NODE_ENV=production node build/server.js",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "node": "14.9.0"
