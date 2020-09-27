@@ -41,9 +41,15 @@ export default (req, store, context) => {
           ? `<script src="${assets.client.js}" defer></script>`
           : `<script src="${assets.client.js}" defer crossorigin></script>`
       }
+      
     </head>
     <body ${helmet.bodyAttributes.toString()}>
       <div id="root">${markup}</div>
+      ${
+        process.env.NODE_ENV === "production"
+          ? `<script src="${assets.framework.js}" defer crossorigin></script>`
+          : ""
+      }
     </body>
     </html>`;
 };

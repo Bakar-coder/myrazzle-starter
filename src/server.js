@@ -11,7 +11,7 @@ const server = express();
 const publicFolder =
   process.env.NODE_ENV === "production"
     ? path.join(__dirname, "../build/public")
-    : process.env.RAZZLE_PUBLIC_DIR;
+    : "public";
 
 server
   .disable("x-powered-by")
